@@ -19,7 +19,24 @@
 require "test_helper"
 
 class OptionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  setup do
+    @question = questions(:two)
+  end
+
+  test "should save option" do
+    option = Option.new(title: 'New Option', question: @question)
+    assert option.valid?
+  end
+
+  test "should not save option without question" do
+    option = Option.new(title: 'New Option')
+    assert_not option.valid?
+  end
+
+  test "should save option without title" do
+    option = Option.new(question: @question)
+    assert_not option.valid?
+  end
+
 end

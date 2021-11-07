@@ -38,10 +38,14 @@ class Response < ApplicationRecord
     if question.text?
       if !body.present?
         errors.add(:body, :blank)
+      else
+        option_id = nil
       end
     else
       if !option.present?
         errors.add(:option, :blank)
+      else
+        body = nil
       end
     end
   end

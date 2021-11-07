@@ -18,7 +18,19 @@
 require "test_helper"
 
 class FeedbackTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  setup do
+    @survey = surveys(:two)
+  end
+
+  test "should save feedback" do
+    feedback = Feedback.new(survey: @survey)
+    assert feedback.valid?
+  end
+
+  test "should not save feedback without survey" do
+    feedback = Feedback.new
+    assert_not feedback.valid?
+  end
+
 end

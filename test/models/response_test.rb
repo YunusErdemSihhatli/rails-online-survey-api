@@ -25,7 +25,32 @@
 require "test_helper"
 
 class ResponseTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  setup do
+    @survey = surveys(:one)
+    @feedback = feedbacks(:two)
+    @question_one = questions(:one)
+    @question_two = questions(:two)
+  end
+
+  test "should save response with text type question" do
+    response = Response.new(body: 'body', question: @question_one, feedback: @feedback)
+    assert response.valid?
+  end
+
+  test "should save response with choice type question" do
+    response = Response.new(option: @question_two.options.first, question: @question_two, feedback: @feedback)
+    assert response.valid?
+  end
+
+  test "should not save response without body with text type question" do
+    response = Response.new(question: @question_one, feedback: @feedback)
+    assert_not response.valid?
+  end
+
+  test "should not save response without option with choice type question" do
+    response = Response.new(question: @question_two, feedback: @feedback)
+    assert_not response.valid?
+  end
+
 end
