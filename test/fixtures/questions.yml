@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id            :uuid             not null, primary key
+#  question_type :integer          not null
+#  title         :text             not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  survey_id     :uuid             not null
+#
+# Indexes
+#
+#  index_questions_on_survey_id  (survey_id)
+#
+# Foreign Keys
+#
+#  survey_id  (survey_id => surveys.id)
+#
+
+one:
+  title: MyText
+  question_type: 1
+
+two:
+  title: MyText
+  question_type: 1
