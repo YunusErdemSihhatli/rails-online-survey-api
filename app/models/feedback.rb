@@ -19,6 +19,6 @@ class Feedback < ApplicationRecord
 
   belongs_to :survey
 
-  validates_presence_of :survey, :question
+  validates_presence_of :survey
 
 end

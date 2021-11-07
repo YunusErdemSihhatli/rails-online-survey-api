@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_07_101630) do
+ActiveRecord::Schema.define(version: 2021_11_07_111043) do
 
 # Could not dump table "feedbacks" because of following StandardError
 #   Unknown type 'uuid' for column 'id'

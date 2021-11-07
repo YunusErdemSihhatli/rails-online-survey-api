@@ -10,7 +10,9 @@
 require "test_helper"
 
 class SurveyTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "should save survey" do
+    assert_equal true, Survey.create(id: SecureRandom.uuid, name: 'New Survey')
+  end
+
 end
