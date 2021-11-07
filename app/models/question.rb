@@ -15,7 +15,7 @@
 #
 # Foreign Keys
 #
-#  survey_id  (survey_id => surveys.id)
+#  fk_rails_...  (survey_id => surveys.id)
 #
 class Question < ApplicationRecord
 

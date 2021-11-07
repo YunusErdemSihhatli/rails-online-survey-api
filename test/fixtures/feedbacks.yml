@@ -13,11 +13,13 @@
 #
 # Foreign Keys
 #
-#  survey_id  (survey_id => surveys.id)
+#  fk_rails_...  (survey_id => surveys.id)
 #
 
 one:
-  survey: one
+  id: ce4a74f4-a131-49ce-81ea-d6e609bfe11d
+  survey_id: fc76598b-37bd-415a-8920-9c5b70224c0c
 
 two:
-  survey: two
+  id: ae75d38a-c107-4cd9-828a-3e0595399cda
+  survey_id: dcfbf319-15b3-4423-8256-b4d5e0912c40

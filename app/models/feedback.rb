@@ -13,11 +13,12 @@
 #
 # Foreign Keys
 #
-#  survey_id  (survey_id => surveys.id)
+#  fk_rails_...  (survey_id => surveys.id)
 #
 class Feedback < ApplicationRecord
 
   belongs_to :survey
+  has_many :responses
 
   validates_presence_of :survey
 

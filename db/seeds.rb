@@ -12,5 +12,5 @@ question2 = Question.create(id: SecureRandom.uuid, title: 'New Question2', quest
 feedback = Feedback.create(id: SecureRandom.uuid, survey: survey)
 responses = Response.create([
   { id: SecureRandom.uuid, body: 'New Response1', question: question1, feedback: feedback },
-  { id: SecureRandom.uuid, body: 'New Response2', question: question2, option: question2.options.first, feedback: feedback },
+  { id: SecureRandom.uuid, question: question2, option: question2.options.first, feedback: feedback },
 ])

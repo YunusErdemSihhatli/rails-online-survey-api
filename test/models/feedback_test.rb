@@ -13,7 +13,7 @@
 #
 # Foreign Keys
 #
-#  survey_id  (survey_id => surveys.id)
+#  fk_rails_...  (survey_id => surveys.id)
 #
 require "test_helper"
 

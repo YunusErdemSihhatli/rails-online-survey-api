@@ -3,7 +3,7 @@
 # Table name: responses
 #
 #  id          :uuid             not null, primary key
-#  body        :text             not null
+#  body        :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  feedback_id :uuid             not null
@@ -18,19 +18,21 @@
 #
 # Foreign Keys
 #
-#  feedback_id  (feedback_id => feedbacks.id)
-#  option_id    (option_id => options.id)
-#  question_id  (question_id => questions.id)
+#  fk_rails_...  (feedback_id => feedbacks.id)
+#  fk_rails_...  (option_id => options.id)
+#  fk_rails_...  (question_id => questions.id)
 #
 
 one:
-  body: MyText
-  question: one
-  option: one
-  feedback: one
+  id: 2b2686c3-9aa6-4229-95d1-0af250a2095e
+  body: body
+  feedback_id: ce4a74f4-a131-49ce-81ea-d6e609bfe11d
+  question_id: c3a3e3ba-4fea-4940-9d42-ea2cffd8c374
+  option_id:
 
 two:
-  body: MyText
-  question: two
-  option: two
-  feedback: two
+  id: edb7f52a-f31c-46c7-8c43-b26eec819fcd
+  body: body
+  feedback_id: ce4a74f4-a131-49ce-81ea-d6e609bfe11d
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  option_id: 1c097106-a908-4381-a1a5-7fccad1b6440

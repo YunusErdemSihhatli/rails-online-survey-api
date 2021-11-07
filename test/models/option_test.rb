@@ -14,7 +14,7 @@
 #
 # Foreign Keys
 #
-#  question_id  (question_id => questions.id)
+#  fk_rails_...  (question_id => questions.id)
 #
 require "test_helper"
 

@@ -3,7 +3,7 @@
 # Table name: responses
 #
 #  id          :uuid             not null, primary key
-#  body        :text             not null
+#  body        :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  feedback_id :uuid             not null
@@ -18,9 +18,9 @@
 #
 # Foreign Keys
 #
-#  feedback_id  (feedback_id => feedbacks.id)
-#  option_id    (option_id => options.id)
-#  question_id  (question_id => questions.id)
+#  fk_rails_...  (feedback_id => feedbacks.id)
+#  fk_rails_...  (option_id => options.id)
+#  fk_rails_...  (question_id => questions.id)
 #
 require "test_helper"
 

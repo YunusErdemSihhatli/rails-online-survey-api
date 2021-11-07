@@ -9,7 +9,9 @@
 #
 
 one:
-  name: MyText
+  id: fc76598b-37bd-415a-8920-9c5b70224c0c
+  name: one
 
 two:
-  name: MyText
+  id: dcfbf319-15b3-4423-8256-b4d5e0912c40
+  name: two

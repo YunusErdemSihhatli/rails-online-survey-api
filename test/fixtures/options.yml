@@ -14,13 +14,25 @@
 #
 # Foreign Keys
 #
-#  question_id  (question_id => questions.id)
+#  fk_rails_...  (question_id => questions.id)
 #
 
 one:
-  title: MyText
-  question: one
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  title: 'Very Good'
 
 two:
-  title: MyText
-  question: two
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  title: 'Good'
+
+three:
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  title: 'Bad'
+
+four:
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  title: 'Very Bad'
+
+five:
+  question_id: 1c097106-a908-4381-a1a5-7fccad1b6440
+  title: 'Neutral'

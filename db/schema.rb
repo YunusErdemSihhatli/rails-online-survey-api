@@ -12,20 +12,50 @@
 
 ActiveRecord::Schema.define(version: 2021_11_07_111043) do
 
-# Could not dump table "feedbacks" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-# Could not dump table "options" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "feedbacks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "survey_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_feedbacks_on_survey_id"
+  end
 
-# Could not dump table "questions" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "options", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "title", null: false
+    t.uuid "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
 
-# Could not dump table "responses" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "questions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "title", null: false
+    t.integer "question_type", null: false
+    t.uuid "survey_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
+  end
 
-# Could not dump table "surveys" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "responses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "body"
+    t.uuid "question_id", null: false
+    t.uuid "option_id"
+    t.uuid "feedback_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["feedback_id"], name: "index_responses_on_feedback_id"
+    t.index ["option_id"], name: "index_responses_on_option_id"
+    t.index ["question_id"], name: "index_responses_on_question_id"
+  end
+
+  create_table "surveys", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   add_foreign_key "feedbacks", "surveys"
   add_foreign_key "options", "questions"

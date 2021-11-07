@@ -10,6 +10,7 @@
 class Survey < ApplicationRecord
 
   has_many :questions
+  has_many :feedbacks
 
   validates_presence_of :name
 
