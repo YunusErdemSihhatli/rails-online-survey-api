@@ -25,7 +25,7 @@ class SurveysController < ApplicationController
         new_response.body = response[:body] if response[:body].present?
         new_response.question_id = response[:question_id]
         new_response.option_id = response[:option_id] if response[:option_id].present?
-        if !new_response.save!
+        if !new_response.save
           saved = false
         end
       end
